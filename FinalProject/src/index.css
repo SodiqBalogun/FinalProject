@@ -35,6 +35,19 @@ input {
   color: black;
 }
 
+.HomePage {
+  display: grid;
+  justify-content: center;
+}
+
+.post {
+  background-color: white;
+}
+
+.post h3, p {
+  color: black;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
