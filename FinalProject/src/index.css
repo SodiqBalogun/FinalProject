@@ -24,6 +24,17 @@ body {
   background-color: rgb(99, 164, 141);
 }
 
+.CreatePost {
+  display: grid;
+  justify-content: center;
+}
+
+input {
+  width: 500px;
+  background-color: white;
+  color: black;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
