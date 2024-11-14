@@ -14,7 +14,7 @@
 }
 
 body {
-  background-color: rgb(199, 119, 119);
+  background-color: rgb(103, 215, 163);
   height: 1000px;
 }
 
@@ -38,14 +38,36 @@ input {
 .HomePage {
   display: grid;
   justify-content: center;
+  margin: 0px 200px 0px 200px;
 }
 
 .post {
   background-color: white;
+  margin: auto;
+  width: 1055px;
 }
 
 .post h2, p {
   color: black;
+}
+
+.PostInfo {
+  background-color: rgb(77, 193, 187);
+  margin: 40px 200px 0px 200px;
+}
+
+.postD {
+  display: grid;
+  justify-content: center;
+}
+
+.upvotes {
+  margin: 40px 0px 0px 0px;
+  display: flex;
+}
+
+.upvotes img {
+  padding: 13px 15px 0px 0px;
 }
 
 a {

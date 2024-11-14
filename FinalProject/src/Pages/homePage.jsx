@@ -26,7 +26,6 @@ const HomePage = () => {
     return (
         <div className="HomePage">
             <h1> All Posts </h1>
-            <h3> Loading more posts... </h3>
             {error && <p>Error: {error}</p>} {/* Display error if exists */}
             {posts.length === 0 ? (
                 <p>No posts available.</p> // Show message when no posts are available
@@ -37,6 +36,7 @@ const HomePage = () => {
                             <Link to={`/post/${post.id}`}>
                                 <p>Posted at: {new Date(post.created_at).toLocaleString()}</p> 
                                 <h2>{post.title}</h2>
+                                <p> {post.upvotes} upvotes </p>
                                 {/* <p>{post.content}</p>
                                 {post.image && <img src={post.image} ></img>} */}
                             </Link>
