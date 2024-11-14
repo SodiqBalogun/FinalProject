@@ -6,6 +6,7 @@ import thumbsUp from "../assets/thumbsUp.png";
 const PostInfo = () => {
     const { id } = useParams(); 
     const [post, setPost] = useState([]);
+    const [comments, setComments] = useState([]);
 
     const fetchPost = async () => {
         const { data, error } = await supabase
@@ -18,6 +19,7 @@ const PostInfo = () => {
             console.error("Error fetching post:", error);
         } else {
             setPost(data);
+            setComments(data.comments);
         }
     };
 
@@ -34,11 +36,31 @@ const PostInfo = () => {
         fetchPost();
     }
 
+    const createComment = async () => {
+        const userComment = document.getElementById("commentInput").value;
+        if (!userComment.trim()) return; 
+        const updatedComments = post.comments ? [...post.comments, userComment] : [userComment];
+
+        const { data, error } = await supabase
+            .from('Posts')
+            .update({ comments: updatedComments })
+            .eq("id", id);
+
+        if (error) {
+            console.error("Error updating comments:", error);
+        } else {
+            alert("Commented!");
+            setComments(updatedComments);
+            fetchPost(); 
+        }
+    }
+
     useEffect(() => {
         fetchPost();
     }, [id]);
 
     console.log(post);
+    console.log(comments);
 
     return (
         <div className="PostInfo">
@@ -48,13 +70,23 @@ const PostInfo = () => {
                 <h3> {post.content} </h3>
                 {post.image && <img src={post.image} height="200px" />}
                 
-                <div className="upvotes" onClick={upVote}>
-                    <img src={thumbsUp} alt="Thumbs Up" height="25px" /> 
-                    <p> {post.upvotes} upvotes </p>
+                <div className="upvotes" >
+                    <img src={thumbsUp} alt="Thumbs Up" height="25px" onClick={upVote}/> 
+                    <p onClick={upVote}> {post.upvotes} upvotes </p>
                 </div>
             </div>
 
-            
+            <div className="comments">
+                <div className="commentPosting">
+                    <input type="text" placeholder="Leave a Comment..." id="commentInput" />
+                    <button className="postComment" onClick={createComment}> Post </button>
+                </div>
+                {comments && comments.map((comment) => (
+                   <div key={comment.id} className="commentLone">
+                        <p> - {comment} </p>
+                    </div>
+                )).reverse()}
+            </div>
         </div>
     )
 }

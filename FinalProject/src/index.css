@@ -42,7 +42,7 @@ input {
 }
 
 .post {
-  background-color: white;
+  background-color: rgb(115, 195, 191);;
   margin: auto;
   width: 1055px;
 }
@@ -54,6 +54,7 @@ input {
 .PostInfo {
   background-color: rgb(77, 193, 187);
   margin: 40px 200px 0px 200px;
+  padding: 0px 0px 20px 0px;
 }
 
 .postD {
@@ -68,6 +69,20 @@ input {
 
 .upvotes img {
   padding: 13px 15px 0px 0px;
+}
+
+.comments {
+  background-color: rgb(87, 175, 171);
+  margin: 0px 200px 0px 200px;
+  padding: 10px;
+}
+
+#commentInput {
+  margin: 0px 20px 0px 0px;
+}
+
+.commentLone {
+  margin: 0px 0px 10px 0px;
 }
 
 a {
