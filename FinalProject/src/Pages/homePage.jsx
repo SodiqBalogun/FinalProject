@@ -1,5 +1,5 @@
 import { supabase } from "../client.js";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const HomePage = () => {
@@ -34,10 +34,12 @@ const HomePage = () => {
                 <div>
                     {posts.map((post) => (
                         <div key={post.id} className="post">
-                            <p>Posted at: {new Date(post.created_at).toLocaleString()}</p> 
-                            <h3>{post.title}</h3>
-                            <p>{post.content}</p>
-                            {post.image && <img src={post.image} ></img>}
+                            <Link to={`/post/${post.id}`}>
+                                <p>Posted at: {new Date(post.created_at).toLocaleString()}</p> 
+                                <h2>{post.title}</h2>
+                                {/* <p>{post.content}</p>
+                                {post.image && <img src={post.image} ></img>} */}
+                            </Link>
                         </div>
                     )).reverse()}
                 </div>
