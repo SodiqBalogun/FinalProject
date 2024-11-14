@@ -44,6 +44,11 @@ body {
   justify-content: center;
 }
 
+.EditPost {
+  display: grid;
+  justify-content: center;
+}
+
 input {
   width: 500px;
   background-color: white;
@@ -76,6 +81,7 @@ input {
   background-color: rgb(115, 195, 191);;
   margin: auto;
   width: 1055px;
+  border-radius: 10px;
 }
 
 .post h2, p {
@@ -88,6 +94,7 @@ input {
   background-color: rgb(77, 193, 187);
   margin: 40px 200px 0px 200px;
   padding: 0px 0px 20px 0px;
+  border-radius: 10px;
 }
 
 .top {

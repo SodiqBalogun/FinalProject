@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import HomePage from "./Pages/homePage.jsx";
 import CreatePost from "./Pages/createPost.jsx";
 import PostInfo from "./Pages/postInfo.jsx";
+import EditPost from "./Pages/editPost.jsx";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/" element={<HomePage/>} />
           <Route path="/create" element={<CreatePost />} />
           <Route path="/post/:id" element={<PostInfo />} />
+          <Route path="/post/:id/edit" element={<EditPost />} />
         </Routes>
       </BrowserRouter>
     </div>

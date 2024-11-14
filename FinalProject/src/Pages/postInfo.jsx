@@ -1,5 +1,5 @@
 import { supabase } from "../client.js";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import thumbsUp from "../assets/thumbsUp.png";
 import deleteIcon from "../assets/deleteIcon.png";
@@ -89,7 +89,7 @@ const PostInfo = () => {
                 <div className="top">
                     <h3>Posted at: {new Date(post.created_at).toLocaleString()}</h3>
                     <div className="icons">
-                        <img src={editIconBlack} alt="Black Edit Icon" height="40px" className="icon" onClick={editPost} />
+                        <Link to ={`/post/${post.id}/edit`}> <img src={editIconBlack} alt="Black Edit Icon" height="40px" className="icon" onClick={editPost} /> </Link>
                         <img src={deleteIcon} alt="Red Delete Icon" height="40px" className="icon" onClick={deletePost} />
                     </div>
                 </div>
