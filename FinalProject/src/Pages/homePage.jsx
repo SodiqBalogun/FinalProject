@@ -25,7 +25,13 @@ const HomePage = () => {
 
     return (
         <div className="HomePage">
-            <h1> All Posts </h1>
+            <div className="filtersFull">
+                <h3> Order by: </h3>
+                <div className="filters">
+                    <button className="newFilter"> Newest </button>
+                    <button className="popFilter"> Most Popular </button>
+                </div>
+            </div>
             {error && <p>Error: {error}</p>} {/* Display error if exists */}
             {posts.length === 0 ? (
                 <p>No posts available.</p> // Show message when no posts are available

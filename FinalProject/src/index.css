@@ -22,6 +22,21 @@ body {
   display: flex;
   justify-content: space-between;
   background-color: rgb(99, 164, 141);
+  height: 70px;
+}
+
+.siteTitle {
+  margin: 15px 0px 0px 200px;
+}
+
+.siteCreate {
+  margin: 15px 200px 0px 0px;
+}
+
+.siteSearch {
+  height: 30px;
+  border-radius: 30px;
+  margin: 17px 0px 0px 0px;
 }
 
 .CreatePost {
@@ -39,6 +54,22 @@ input {
   display: grid;
   justify-content: center;
   margin: 0px 200px 0px 200px;
+}
+
+.filtersFull {
+  display: flex;
+}
+
+.filters {
+  margin: 15px 0px 0px 10px;
+}
+
+.newFilter, .popFilter {
+  background-color: rgb(87, 187, 201);
+}
+
+.popFilter {
+  margin: 0px 0px 0px 10px;
 }
 
 .post {

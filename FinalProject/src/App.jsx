@@ -10,9 +10,9 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <div className="header">
-          <Link to={"/"} > <h2> SongHub </h2> </Link>
-          <input type="text" placeholder="search" />
-          <Link to={"/create"}> <h3> Create New Post </h3> </Link>
+          <Link to={"/"} > <h2 className="siteTitle"> SongHub </h2> </Link>
+          <input type="text" placeholder="Search" className="siteSearch" />
+          <Link to={"/create"}> <h3 className="siteCreate"> Create New Post </h3> </Link>
         </div>
 
         <Routes>
