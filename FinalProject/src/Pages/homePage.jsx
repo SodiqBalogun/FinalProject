@@ -37,8 +37,6 @@ const HomePage = () => {
                                 <p>Posted at: {new Date(post.created_at).toLocaleString()}</p> 
                                 <h2>{post.title}</h2>
                                 <p> {post.upvotes} upvotes </p>
-                                {/* <p>{post.content}</p>
-                                {post.image && <img src={post.image} ></img>} */}
                             </Link>
                         </div>
                     )).reverse()}

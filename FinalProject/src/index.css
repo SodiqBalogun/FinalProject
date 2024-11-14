@@ -52,14 +52,29 @@ input {
 }
 
 .PostInfo {
+  display: grid;
+  justify-content: center;
   background-color: rgb(77, 193, 187);
   margin: 40px 200px 0px 200px;
   padding: 0px 0px 20px 0px;
 }
 
+.top {
+  display: flex;
+}
+
+.icons {
+  margin: 10px 0px 0px 230px;
+}
+
+.icon {
+  margin: 0px 10px 0px 0px;
+}
+
 .postD {
-  display: grid;
-  justify-content: center;
+  /* display: grid;
+  justify-content: center; */
+  margin: 0px 200px 0px 200px;
 }
 
 .upvotes {

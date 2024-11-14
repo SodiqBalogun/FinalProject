@@ -2,11 +2,14 @@ import { supabase } from "../client.js";
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import thumbsUp from "../assets/thumbsUp.png";
+import deleteIcon from "../assets/deleteIcon.png";
+import editIconBlack from "../assets/editIconBlack.png";
 
 const PostInfo = () => {
     const { id } = useParams(); 
     const [post, setPost] = useState([]);
     const [comments, setComments] = useState([]);
+    const navigate = useNavigate();
 
     const fetchPost = async () => {
         const { data, error } = await supabase
@@ -55,6 +58,24 @@ const PostInfo = () => {
         }
     }
 
+    const editPost = async () => {
+
+    }
+
+    const deletePost = async () => {
+        const { error } = await supabase
+            .from('Posts')
+            .delete()
+            .eq('id', id);
+    
+        if (error) {
+            console.error("Error deleting post:", error);
+        } else {
+            alert("Post deleted successfully!");
+            navigate('/');
+        }
+    }
+
     useEffect(() => {
         fetchPost();
     }, [id]);
@@ -65,7 +86,13 @@ const PostInfo = () => {
     return (
         <div className="PostInfo">
             <div className="postD">
-                <h3>Posted at: {new Date(post.created_at).toLocaleString()}</h3>
+                <div className="top">
+                    <h3>Posted at: {new Date(post.created_at).toLocaleString()}</h3>
+                    <div className="icons">
+                        <img src={editIconBlack} alt="Black Edit Icon" height="40px" className="icon" onClick={editPost} />
+                        <img src={deleteIcon} alt="Red Delete Icon" height="40px" className="icon" onClick={deletePost} />
+                    </div>
+                </div>
                 <h2> {post.title} </h2>
                 <h3> {post.content} </h3>
                 {post.image && <img src={post.image} height="200px" />}
